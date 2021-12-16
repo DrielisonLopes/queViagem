@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Viagem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Blog-Template.css" />
+    <link rel="stylesheet" href="~/css/Destinos.css" />
+    <link rel="stylesheet" href="~/css/Home.css" />
+    <link rel="stylesheet" href="~/css/nicepage.css" />
+    <link rel="stylesheet" href="~/css/Post-Template.css" />
+    <link rel="stylesheet" href="~/css/Promoções.css" />
+</head>
+<body>
+    <header class="u-clearfix u-header" id="sec-320d">
+          <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+        <h3 class="u-align-left-xs u-headline u-text u-text-body-alt-color u-text-1">
+          <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">queViagem</a>
+        </h3>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700;">
+            <a class="u-btn-text u-button-style u-nav-link u-text-body-alt-color" href="#" style="padding: 4px 24px; font-size: calc(1em + 8px);">
+              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style="undefined"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-a760"></use></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-a760" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-body-alt-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-body-alt-color" asp-area="" asp-controller="Home" asp-action="Privacy">Destinos</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-body-alt-color" href="Promoções.html">Promoções</a>
+                </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-body-alt-color">Contato</a></li>
+            </ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                    <li class="u-nav-item">
+                        <a class="u-button-style u-nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="u-nav-item">
+                        <a class="u-button-style u-nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Destinos</a>
+                    </li>
+                    <li class="u-nav-item">
+                        <a class="u-button-style u-nav-link" href="Promoções.html">Promoções</a>
+                    </li>
+                    <li class="u-nav-item">
+                        <a class="u-button-style u-nav-link">Contato</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div>
+    </header> 
+    <section class="u-clearfix u-image u-section-1" src="" id="sec-59a1">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-body-alt-color u-title u-text-1">Vem com agente</h1>
+        <p class="u-large-text u-text u-text-body-alt-color u-text-variant u-text-2">Seja bem vindo ao melhor site de buscas do país. Faça sua reserva em minutos e divirta-se pelo mundo!</p>
+        <a href="https://nicepage.com/joomla-templates" class="u-btn u-btn-round u-button-style u-gradient u-radius-10 u-btn-1">Comprar</a>
+      </div>
+    </section>
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/nicepage.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
