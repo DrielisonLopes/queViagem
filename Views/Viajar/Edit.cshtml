@@ -1,0 +1,65 @@
+@model Viagem.Models.Viajar
+
+@{
+    ViewData["Title"] = "Edit Viajar";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Viajar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Partida" class="control-label"></label>
+                <input asp-for="Partida" class="form-control" />
+                <span asp-validation-for="Partida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"></label>
+                <input asp-for="Destino" class="form-control" />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dataIda" class="control-label"></label>
+                <input asp-for="dataIda" class="form-control" />
+                <span asp-validation-for="dataIda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dataVolta" class="control-label"></label>
+                <input asp-for="dataVolta" class="form-control" />
+                <span asp-validation-for="dataVolta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassageiroId_passageiro" class="control-label"></label>
+                <input asp-for="PassageiroId_passageiro" class="form-control" />
+                <span asp-validation-for="PassageiroId_passageiro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PagamentoId_pagamento" class="control-label"></label>
+                <input asp-for="PagamentoId_pagamento" class="form-control" />
+                <span asp-validation-for="PagamentoId_pagamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

@@ -28,6 +28,12 @@ namespace Viagem
             services.AddControllersWithViews();
             services.AddDbContext<ViajarContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("ConnDB")));
+
+            services.AddDbContext<ViagensContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ViagensContext")));
+
+            services.AddDbContext<PassageiroContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PassageiroContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,63 @@
+@model Viagem.Models.Viajar
+
+@{
+    ViewData["Title"] = "Details Viajar";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Viajar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Partida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Partida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Destino)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Destino)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataIda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataIda)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataVolta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataVolta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PassageiroId_passageiro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PassageiroId_passageiro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PagamentoId_pagamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PagamentoId_pagamento)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

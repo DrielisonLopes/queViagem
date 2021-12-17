@@ -16,11 +16,11 @@ namespace Viagem.Models
         [Required]
         public int dataVolta {get; set;}
 
-        // [Required]
-        // public int NomeId_nome {get; set;}
-        // public Nome Nome {get; set;}
-        // [Required]
-        // public string PagamentoId_pagamento {get; set;}
-        // public Pagamento Pagamento {get; set;}
+        [Required]
+        public int PassageiroId_passageiro {get; set;}
+        public Passageiro Passageiro {get; set;}
+        [Required]
+        public int PagamentoId_pagamento {get; set;}
+        public Pagamento Pagamento {get; set;}
     }
 }
