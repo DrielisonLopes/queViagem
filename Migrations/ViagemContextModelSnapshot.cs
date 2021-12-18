@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Viagem.Database;
+using Viagem.Data;
 
 namespace Viagem.Migrations
 {
-    [DbContext(typeof(ViajarContext))]
-    partial class ViajarContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ViagemContext))]
+    partial class ViagemContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace Viagem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pagamento");
+                    b.ToTable("Pagamentos");
                 });
 
             modelBuilder.Entity("Viagem.Models.Passageiro", b =>
@@ -52,7 +52,7 @@ namespace Viagem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Passageiro");
+                    b.ToTable("Passageiros");
                 });
 
             modelBuilder.Entity("Viagem.Models.Viajar", b =>

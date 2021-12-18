@@ -15624,18 +15624,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viajar\\Index.cshtml",
-      "TargetPath": "Views\\Viajar\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Pagamento\\Create.cshtml",
       "TargetPath": "Views\\Pagamento\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viajar\\Details.cshtml",
-      "TargetPath": "Views\\Viajar\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15669,11 +15659,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viajar\\Edit.cshtml",
-      "TargetPath": "Views\\Viajar\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Pagamento\\Details.cshtml",
       "TargetPath": "Views\\Pagamento\\Details.cshtml",
       "FileKind": "mvc"
@@ -15684,13 +15669,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viajar\\Create.cshtml",
-      "TargetPath": "Views\\Viajar\\Create.cshtml",
+      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Pagamento\\Index.cshtml",
+      "TargetPath": "Views\\Pagamento\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Pagamento\\Index.cshtml",
-      "TargetPath": "Views\\Pagamento\\Index.cshtml",
+      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viagem\\Delete.cshtml",
+      "TargetPath": "Views\\Viagem\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15704,13 +15689,28 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viajar\\Delete.cshtml",
-      "TargetPath": "Views\\Viajar\\Delete.cshtml",
+      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viagem\\Details.cshtml",
+      "TargetPath": "Views\\Viagem\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Passageiro\\Details.cshtml",
       "TargetPath": "Views\\Passageiro\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viagem\\Edit.cshtml",
+      "TargetPath": "Views\\Viagem\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viagem\\Create.cshtml",
+      "TargetPath": "Views\\Viagem\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Driel\\OneDrive\\Documentos\\Viagem\\Viagem\\Views\\Viagem\\Index.cshtml",
+      "TargetPath": "Views\\Viagem\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

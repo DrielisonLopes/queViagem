@@ -5,27 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Viagem.Database;
+using Viagem.Data;
 using Viagem.Models;
 
 namespace Viagem.Controllers
 {
-    public class ViajarController : Controller
+    public class ViagemController : Controller
     {
-        private readonly ViagensContext _context;
+        private readonly ViagemContext _context;
 
-        public ViajarController(ViagensContext context)
+        public ViagemController(ViagemContext context)
         {
             _context = context;
         }
 
-        // GET: Viajar
+        // GET: Viagem
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Viajar.ToListAsync());
+            return View(await _context.Viagens.ToListAsync());
         }
 
-        // GET: Viajar/Details/5
+        // GET: Viagem/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var viajar = await _context.Viajar
+            var viajar = await _context.Viagens
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (viajar == null)
             {
@@ -43,13 +43,15 @@ namespace Viagem.Controllers
             return View(viajar);
         }
 
-        // GET: Viajar/Create
+        // GET: Viagem/Create
         public IActionResult Create()
         {
+            ViewData["PagamentoId_pagamento"] = new SelectList(_context.Pagamentos, "Id_Pagamento", "Pagar");
+            ViewData["PassageiroId_passageiro"] = new SelectList(_context.Passageiros, "Id_Passageiro", "Nome");
             return View();
         }
 
-        // POST: Viajar/Create
+        // POST: Viagem/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +67,7 @@ namespace Viagem.Controllers
             return View(viajar);
         }
 
-        // GET: Viajar/Edit/5
+        // GET: Viagem/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,7 +75,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var viajar = await _context.Viajar.FindAsync(id);
+            var viajar = await _context.Viagens.FindAsync(id);
             if (viajar == null)
             {
                 return NotFound();
@@ -81,7 +83,7 @@ namespace Viagem.Controllers
             return View(viajar);
         }
 
-        // POST: Viajar/Edit/5
+        // POST: Viagem/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +118,7 @@ namespace Viagem.Controllers
             return View(viajar);
         }
 
-        // GET: Viajar/Delete/5
+        // GET: Viagem/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,7 +126,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var viajar = await _context.Viajar
+            var viajar = await _context.Viagens
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (viajar == null)
             {
@@ -134,20 +136,20 @@ namespace Viagem.Controllers
             return View(viajar);
         }
 
-        // POST: Viajar/Delete/5
+        // POST: Viagem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var viajar = await _context.Viajar.FindAsync(id);
-            _context.Viajar.Remove(viajar);
+            var viajar = await _context.Viagens.FindAsync(id);
+            _context.Viagens.Remove(viajar);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ViajarExists(int id)
         {
-            return _context.Viajar.Any(e => e.Id == id);
+            return _context.Viagens.Any(e => e.Id == id);
         }
     }
 }

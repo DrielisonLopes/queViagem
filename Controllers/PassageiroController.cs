@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Viagem.Database;
+using Viagem.Data;
 using Viagem.Models;
 
 namespace Viagem.Controllers
 {
     public class PassageiroController : Controller
     {
-        private readonly ViagensContext _context;
+        private readonly ViagemContext _context;
 
-        public PassageiroController(ViagensContext context)
+        public PassageiroController(ViagemContext context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace Viagem.Controllers
         // GET: Passageiro
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Passageiro.ToListAsync());
+            return View(await _context.Passageiros.ToListAsync());
         }
 
         // GET: Passageiro/Details/5
@@ -33,7 +33,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var passageiro = await _context.Passageiro
+            var passageiro = await _context.Passageiros
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (passageiro == null)
             {
@@ -73,7 +73,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var passageiro = await _context.Passageiro.FindAsync(id);
+            var passageiro = await _context.Passageiros.FindAsync(id);
             if (passageiro == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var passageiro = await _context.Passageiro
+            var passageiro = await _context.Passageiros
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (passageiro == null)
             {
@@ -139,15 +139,15 @@ namespace Viagem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var passageiro = await _context.Passageiro.FindAsync(id);
-            _context.Passageiro.Remove(passageiro);
+            var passageiro = await _context.Passageiros.FindAsync(id);
+            _context.Passageiros.Remove(passageiro);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PassageiroExists(int id)
         {
-            return _context.Passageiro.Any(e => e.Id == id);
+            return _context.Passageiros.Any(e => e.Id == id);
         }
     }
 }

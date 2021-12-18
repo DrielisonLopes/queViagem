@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Viagem.Database;
+using Viagem.Data;
 using Viagem.Models;
 
 namespace Viagem.Controllers
 {
     public class PagamentoController : Controller
     {
-        private readonly ViagensContext _context;
+        private readonly ViagemContext _context;
 
-        public PagamentoController(ViagensContext context)
+        public PagamentoController(ViagemContext context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace Viagem.Controllers
         // GET: Pagamento
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pagamento.ToListAsync());
+            return View(await _context.Pagamentos.ToListAsync());
         }
 
         // GET: Pagamento/Details/5
@@ -33,7 +33,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var pagamento = await _context.Pagamento
+            var pagamento = await _context.Pagamentos
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pagamento == null)
             {
@@ -73,7 +73,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var pagamento = await _context.Pagamento.FindAsync(id);
+            var pagamento = await _context.Pagamentos.FindAsync(id);
             if (pagamento == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace Viagem.Controllers
                 return NotFound();
             }
 
-            var pagamento = await _context.Pagamento
+            var pagamento = await _context.Pagamentos
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pagamento == null)
             {
@@ -139,15 +139,15 @@ namespace Viagem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pagamento = await _context.Pagamento.FindAsync(id);
-            _context.Pagamento.Remove(pagamento);
+            var pagamento = await _context.Pagamentos.FindAsync(id);
+            _context.Pagamentos.Remove(pagamento);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PagamentoExists(int id)
         {
-            return _context.Pagamento.Any(e => e.Id == id);
+            return _context.Pagamentos.Any(e => e.Id == id);
         }
     }
 }

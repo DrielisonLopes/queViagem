@@ -7,7 +7,7 @@ namespace Viagem.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Pagamento",
+                name: "Pagamentos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -16,11 +16,11 @@ namespace Viagem.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Pagamento", x => x.Id);
+                    table.PrimaryKey("PK_Pagamentos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Passageiro",
+                name: "Passageiros",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -30,7 +30,7 @@ namespace Viagem.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Passageiro", x => x.Id);
+                    table.PrimaryKey("PK_Passageiros", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,15 +52,15 @@ namespace Viagem.Migrations
                 {
                     table.PrimaryKey("PK_Viagens", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Viagens_Pagamento_PagamentoId",
+                        name: "FK_Viagens_Pagamentos_PagamentoId",
                         column: x => x.PagamentoId,
-                        principalTable: "Pagamento",
+                        principalTable: "Pagamentos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Viagens_Passageiro_PassageiroId",
+                        name: "FK_Viagens_Passageiros_PassageiroId",
                         column: x => x.PassageiroId,
-                        principalTable: "Passageiro",
+                        principalTable: "Passageiros",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -82,10 +82,10 @@ namespace Viagem.Migrations
                 name: "Viagens");
 
             migrationBuilder.DropTable(
-                name: "Pagamento");
+                name: "Pagamentos");
 
             migrationBuilder.DropTable(
-                name: "Passageiro");
+                name: "Passageiros");
         }
     }
 }

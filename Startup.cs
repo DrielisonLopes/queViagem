@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Viagem.Database;
+using Viagem.Data;
 
 namespace Viagem
 {
@@ -25,15 +25,10 @@ namespace Viagem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            services.AddDbContext<ViajarContext>(options => 
+            services.AddDbContext<ViagemContext>(options => 
             options.UseSqlServer(Configuration.GetConnectionString("ConnDB")));
+            services.AddControllersWithViews();
 
-            services.AddDbContext<ViagensContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ViagensContext")));
-
-            services.AddDbContext<PassageiroContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("PassageiroContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

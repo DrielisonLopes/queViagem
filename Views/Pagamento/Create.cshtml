@@ -10,29 +10,66 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Create</title>
+    <style>
+            #sec-59a1, #menuPrincipal { 
+                display: none;
+            }
+            header {
+                background-image: url("../images/04c92f4b1888be1f59c0cf8549526806.jpeg") !important;
+            }
+            footer {
+                position: fixed;
+                bottom:0;
+                left:0;
+                width: 100%;
+            }
+            .cartoes {
+                background-image: url("../images/pag.jpeg");
+                padding-left: 30%;
+                margin: 2rem 0;
+            }
+        </style>
 </head>
 <body>
 
-<h4>Pagamento</h4>
+<h4 class="pl-4 text-center">Escolha a forma de Pagamento</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 container">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Pagar" class="control-label"></label>
-                <input asp-for="Pagar" class="form-control" />
+                <label asp-for="Pagar" class="control-label" ></label>
+                <input asp-for="Pagar" class="form-control" placeholder="Digite aqui um das opções abaixo" />
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" disabled>
+                <label class="form-check-label" for="inlineRadio1">Cartão de Crédito</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" disabled>
+                <label class="form-check-label" for="inlineRadio2">Cartão de Débito</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+                <label class="form-check-label" for="inlineRadio3">Boleto</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4" disabled>
+                <label class="form-check-label" for="inlineRadio4">Pix</label>
+            </div>
+            <img src="images/pag.jpeg" alt="">
                 <span asp-validation-for="Pagar" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group w-100 text-center">
+                <input type="submit" value="Create" class="btn btn-primary w-50" />
             </div>
         </form>
     </div>
 </div>
-
+    <img src="~/images/pag.jfif" alt="" class="w-75 cartoes">
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="pl-4">Voltar a Lista</a>
 </div>
 
 </body>
